@@ -4,7 +4,7 @@ const axios = require("axios");
 // Рабочий TMDB API-ключ (публичный, используется во многих аддонах)
 const TMDB_API_KEY = "3123c2bcac21d1aebd9c41833510dfaf";
 
-const TORAPI_BASE = "https://torapi.vercel.app"; // Публичный экземпляр TorAPI
+const TORAPI_BASE = "https://torapi-backend.onrender.com"; // Публичный экземпляр TorAPI
 
 const builder = new addonBuilder({
     id: "org.torapi.stremio",
@@ -100,4 +100,5 @@ const { serveHTTP } = require("stremio-addon-sdk");
 const port = process.env.PORT || 7000;
 serveHTTP(builder.getInterface(), { port });
 console.log(`Аддон запущен! Установите в Stremio по адресу:`);
+
 console.log(`http://127.0.0.1:${port}/manifest.json`);
